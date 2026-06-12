@@ -1,0 +1,193 @@
+/* ==========================================
+   1. ГЛОБАЛЬНІ НАЛАШТУВАННЯ ТА СКИДАННЯ
+   ========================================== */
+:root {
+    --bg-black-absolute: #000000;
+    --bg-grey-zone: #0a0a0a;
+    --bg-placeholder: #141414;
+    --neon-green: #24FF00;
+    --text-white: #FFFFFF;
+    --text-muted-light: #b5b5b5;
+}
+
+/* Обов'язкова умова ЛР5: Жорстке блокування прокручування по ширині */
+html, body {
+    background-color: var(--bg-black-absolute) !important;
+    color: var(--text-white) !important;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    width: 100%;
+}
+
+main {
+    background-color: var(--bg-black-absolute) !important;
+}
+
+/* ==========================================
+   2. КОМПАКТНА МОБІЛЬНА НАВІГАЦІЯ (HEADER)
+   ========================================== */
+.logo {
+    font-size: 24px !important;
+    font-weight: 800;
+    color: var(--neon-green) !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* Умова ЛР5: Достатня відстань між активними лінками для легкого тапання */
+.mobile-nav .nav-link {
+    color: var(--text-white) !important;
+    font-size: 14px; /* Шрифт строго більше 12px */
+    font-weight: 700;
+    opacity: 0.6;
+    text-transform: uppercase;
+    padding: 12px 10px !important; /* Надійна зона для натискання пальцем */
+    transition: all 0.2s ease;
+}
+
+.mobile-nav .nav-link.active,
+.mobile-nav .nav-link:hover {
+    opacity: 1;
+    color: var(--neon-green) !important;
+}
+
+/* ==========================================
+   3. СТИЛІ ДЛЯ СТОРІНКИ INDEX.HTML (ГОЛОВНА)
+   ========================================== */
+.hero-section {
+    background-color: var(--bg-black-absolute);
+    padding: 50px 0 30px 0;
+}
+
+.hero-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-white);
+}
+
+/* Збільшена тач-зона для головної кнопки дії */
+.mobile-action-btn {
+    padding: 16px 0 !important; 
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--neon-green) !important;
+    color: #000 !important;
+    border: none;
+}
+
+.events-section {
+    background-color: var(--bg-grey-zone);
+    padding: 30px 0;
+}
+
+/* Умова ЛР5: Зведення всіх карток подій в один вертикальний ряд */
+.event-card {
+    background-color: var(--bg-placeholder) !important;
+    border-left: 4px solid var(--neon-green) !important;
+    border-radius: 0;
+    margin-bottom: 15px;
+}
+
+.event-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: var(--text-white);
+}
+
+.event-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--text-muted-light);
+}
+
+/* ==========================================
+   4. СТИЛІ ДЛЯ СТОРІНКИ ABOUT.HTML (ПРО КЛУБ)
+   ========================================== */
+.fw-800 { font-weight: 800; }
+
+.lead-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-muted-light);
+}
+
+.gallery-wrapper-mobile {
+    height: 120px;
+    overflow: hidden;
+    background-color: #111;
+    border: 1px solid #222;
+}
+
+.m-gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-grey-zone { background-color: var(--bg-grey-zone); }
+
+/* ==========================================
+   5. СТИЛІ ДЛЯ СТОРІНКИ CONTACTS.HTML (ФОРМА ТА ІНФО)
+   ========================================== */
+.m-input {
+    background-color: var(--bg-placeholder) !important;
+    border: 1px solid #222 !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    padding: 14px !important; /* Велика зона для фокусу введення */
+    font-size: 16px;
+}
+
+.m-input:focus {
+    border-color: var(--neon-green) !important;
+    box-shadow: 0 0 8px rgba(36, 255, 0, 0.2) !important;
+}
+
+.btn-neon {
+    background-color: var(--neon-green) !important;
+    color: #000 !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+}
+
+.border-neon-custom {
+    border-color: var(--neon-green) !important;
+}
+
+/* Умова ЛР5: Великі тач-відступи для клікабельного номеру телефону */
+.mobile-phone-link {
+    color: var(--neon-green) !important;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 0; 
+    display: inline-block;
+}
+
+/* ==========================================
+   6. ФУТЕР ТА МЕДІА-ЗАПИТИ
+   ========================================== */
+footer {
+    background-color: #000000;
+    border-top: 1px solid #111;
+}
+
+.footer-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; /* Чітко за нижньою межею ТЗ (>=12px) */
+    color: #444;
+}
+
+/* Структура медіазапиту за вимогами методички */
+@media screen and (max-width: 575px) {
+    .mobile-nav .nav-link {
+        padding: 8px 6px !important; /* Стискаємо відступи для міні-екранів Extra Small */
+        font-size: 13px;
+    }
+    .hero-title { font-size: 34px; }
+}
